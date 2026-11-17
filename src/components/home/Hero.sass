@@ -1,4 +1,25 @@
-@use 'global' as *
+@use 'abstracts' as *
 
 .hero
     margin-bottom: torem(40)
+    gap: torem(10)
+
+    &__header
+        text-align: center
+
+    &__description
+        max-width: torem(800)
+        text-align: center
+        text-wrap: balance
+
+    &__cta
+        display: flex
+        flex-wrap: wrap
+        gap: torem(10)
+
+        button
+            min-width: 0
+            flex: 1 1 0
+
+        :last-child
+            flex-basis: 100%
