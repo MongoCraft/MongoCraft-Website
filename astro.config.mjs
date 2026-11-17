@@ -1,15 +1,24 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
-import cloudflare from '@astrojs/cloudflare';
-import sitemap from '@astrojs/sitemap';
+import { defineConfig } from "astro/config";
+import cloudflare from "@astrojs/cloudflare";
+import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://example.com',
-  output: 'server',
-  trailingSlash: 'always',
+  site: "https://example.com",
+  output: "server",
+  trailingSlash: "always",
 
   adapter: cloudflare(),
 
   integrations: [sitemap()],
+  vite: {
+    css: {
+      preprocessorOptions: {
+        sass: {
+          loadPaths: ["src/styles"],
+        },
+      },
+    },
+  },
 });

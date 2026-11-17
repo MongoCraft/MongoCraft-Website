@@ -1,25 +1,4 @@
-@use 'sass:math'
-
-@function rem($px, $base-font-size: 16)
-    @return math.div($px, $base-font-size) * 1rem
-
-*, ::before, ::after
-    box-sizing: border-box
-    padding: 0
-    margin: 0
-
-body
-    direction: rtl
-    font-size: rem(16)
-
-.main-container
-    width: 100%
-    max-width: rem(1280)
-    margin-inline: auto
-    padding: rem(10)
-
-.section
-    display: flex
-    flex-direction: column
-    justify-content: center
-    align-items: center
+@use 'abstracts'
+@use 'base'
+@use 'layout'
+@use 'components'

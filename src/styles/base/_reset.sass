@@ -1,0 +1,42 @@
+@use '../abstracts' as *
+
+html
+    scroll-behavior: smooth
+
+*, ::before, ::after
+    box-sizing: border-box
+    padding: 0
+    margin: 0
+
+body
+    direction: rtl
+    font-size: $font-size-base
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video
+    vertical-align: middle
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset
+    border: 0
+    margin: 0
+    padding: 0
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea
+    resize: vertical
