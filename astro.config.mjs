@@ -1,20 +1,15 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-import node from '@astrojs/node';
-import sitemap from '@astrojs/sitemap'
+import cloudflare from '@astrojs/cloudflare';
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://example.com',
   output: 'server',
-    trailingSlash: 'always',
+  trailingSlash: 'always',
 
-  adapter: node({
-    mode: 'standalone',
-    staticHeaders: true
-  }),
+  adapter: cloudflare(),
 
-  integrations: [sitemap({
-    
-  })]
+  integrations: [sitemap()],
 });

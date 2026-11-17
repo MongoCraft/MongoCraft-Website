@@ -9,15 +9,18 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "deploy": "astro build && wrangler deploy",
+    "types": "wrangler types",
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/node": "^11.1.13",
+    "@astrojs/cloudflare": "^14.4.8",
     "@astrojs/sitemap": "^3.7.5",
     "astro": "^7.4.12"
   },
   "devDependencies": {
-    "sass": "^1.108.2"
+    "sass": "^1.108.2",
+    "wrangler": "^4.164.0"
   },
   "allowScripts": {
     "@parcel/watcher@2.6.0": true
