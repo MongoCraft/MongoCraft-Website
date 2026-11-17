@@ -12,8 +12,17 @@ import "./Hero.sass";
     نام در نسخه ی ازمایشی ثبت نام کن.
   </p>
   <div class="hero__cta">
-    <button>ثبت نام</button>
-    <button>آموزشات</button>
-    <button>کانال تلگرام</button>
+    <button id="btn-register" class="button">
+      ثبت نام
+    </button>
+    <button class="button">آموزشات</button>
+    <button class="button">کانال تلگرام</button>
   </div>
 </section>
+
+<script>
+  const registerBtn = document.getElementById("btn-register");
+  registerBtn?.addEventListener("click", (e) => {
+    alert("ok");
+  });
+</script>
