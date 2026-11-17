@@ -1,0 +1,41 @@
+---
+// src/components/SlideDeck.astro
+interface Props {
+  slides: { title: string; body: string }[];
+}
+const { slides } = Astro.props;
+---
+
+<main class="slide-deck">
+  {slides.map((slide, i) => (
+    <section class="slide" data-index={i}>
+      <h2>{slide.title}</h2>
+      <p>{slide.body}</p>
+    </section>
+  ))}
+</main>
+
+<style>
+  .slide-deck {
+    height: 100dvh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory; /* ← the whole trick */
+    scroll-behavior: smooth;
+    overscroll-behavior-y: contain; /* don't chain to page scroll */
+  }
+
+  .slide {
+    height: 100dvh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always; /* ← one scroll = one slide */
+    display: grid;
+    place-content: center;
+  }
+
+  /* Respect users who dislike motion */
+  @media (prefers-reduced-motion: reduce) {
+    .slide-deck {
+      scroll-behavior: auto;
+    }
+  }
+</style>
