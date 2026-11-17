@@ -1,7 +1,7 @@
 {
   "name": "mongocraft-website",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "engines": {
     "node": ">=22.23.4"
   },
@@ -12,6 +12,14 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/node": "^11.1.13",
+    "@astrojs/sitemap": "^3.7.5",
     "astro": "^7.4.12"
+  },
+  "devDependencies": {
+    "sass": "^1.108.2"
+  },
+  "allowScripts": {
+    "@parcel/watcher@2.6.0": true
   }
 }
